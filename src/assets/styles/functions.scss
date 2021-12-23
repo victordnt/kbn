@@ -1,0 +1,8 @@
+@use "colors" as c;
+@function get-color($base, $shade: "500") {
+    $map-color: map-get($map: c.$palette, $key: $base);
+  @return map-get(
+    $map: $map-color,
+    $key: $shade
+  );
+}
