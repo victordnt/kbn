@@ -1,0 +1,14 @@
+:host {
+  display: inline-flex;
+  padding-inline: 0.5em;
+}
+h1 {
+  font-size: 2.5em;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+  user-select: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
