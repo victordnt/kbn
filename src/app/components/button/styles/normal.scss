@@ -1,0 +1,65 @@
+@use "../../../../assets/styles/functions" as f;
+:host {
+  display: contents;
+  user-select: none;
+}
+div {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  button {
+    color: f.get-color("shade", "100");
+    display: inline-flex;
+    transition: all 150ms ease-in-out;
+    height: auto;
+    --button-b-color: white;
+    --button-color: #{f.get-color("shade","700")};
+    --init-shadow-bottom: 0.4rem;
+    --init-shadow-right: 0.2rem;
+
+    --shadow-bottom: var(--init-shadow-bottom);
+    --shadow-right: var(--init-shadow-right);
+    background-color: var(--button-b-color);
+    font-style: italic;
+    font-size: inherit;
+    padding: 0.75rem 1.5rem;
+    border: 0.2rem solid var(--button-color);
+    border-radius: 100vh;
+    margin-bottom: var(--shadow-bottom);
+    margin-right: var(--shadow-right);
+    box-shadow: var(--shadow-right) var(--shadow-bottom) 0 var(--button-color),
+      inset 0 0 var(--button-color);
+    &:hover {
+      --shadow-bottom: calc(var(--init-shadow-bottom) - 0.1rem);
+      --shadow-right: calc(var(--init-shadow-right) - 0.05rem);
+      margin-top: 0.1rem;
+      margin-left: 0.05rem;
+    }
+    &:active {
+      transition: all 100ms cubic-bezier(1, 1.36, 0, -0.19);
+      --shadow-bottom: calc(var(--init-shadow-bottom) - 0.4rem);
+      --shadow-right: calc(var(--init-shadow-right) - 0.2rem);
+      margin-top: 0.4rem;
+      margin-left: 0.2rem;
+      box-shadow: 0 0 var(--button-color),
+        inset 0.2rem 0.1rem var(--button-color);
+      padding: 0.85rem 1.4rem 0.65rem 1.6rem;
+    }
+    &:focus {
+      --button-b-color: white;
+      outline: none;
+    }
+    &:focus-visible {
+      --button-b-color: #{f.get-color("yellow", "900")};
+      --button-color: #{f.get-color("shade", "500")};
+      transform: scale(1.015);
+      outline: none;
+    }
+    &:disabled {
+      
+    --button-color: #{transparentize($color: f.get-color("shade","700"), $amount: .3)};
+
+    }
+    // background-color: $blk
+  }
+}

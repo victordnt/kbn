@@ -1,0 +1,49 @@
+@use "../../../../assets/styles/functions" as f;
+
+:host {
+  display: contents;
+  user-select: none;
+}
+div {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  button {
+    display: inline-flex;
+    transition: all 150ms ease-in-out;
+    height: auto;
+    --button-color: hsl(0, 0%, 70%);
+    --init-shadow-bottom: 0.4rem;
+    --init-shadow-right: 0.2rem;
+
+    --shadow-bottom: var(--init-shadow-bottom);
+    --shadow-right: var(--init-shadow-right);
+    background-color: transparent;
+    font-style: italic;
+    font-size: inherit;
+    border: none;
+    text-decoration-color: transparentize($color: f.get-color("yellow"), $amount: 1);
+    outline: transparent dotted 2px;
+    outline-offset: 3px;
+
+
+    &:hover {
+      color:f.get-color("shade", "300") ;
+      text-decoration: underline wavy f.get-color("yellow");
+      cursor: pointer;
+    }
+    &:active {
+    }
+    &:focus {
+      outline: none
+    }
+    &:focus-visible {
+      color:f.get-color("shade", "100") ;
+      // text-decoration: underline wavy f.get-color("yellow");
+      outline-color: f.get-color("yellow", "300");
+      outline-offset: 3px;
+      outline-width: 2px;
+      outline-style: dotted;
+    }
+  }
+}
