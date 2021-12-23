@@ -18,7 +18,17 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		"johnpapa.angular2",
+		"angular.ng-template",
+		"msjsdiag.debugger-for-chrome",
+		"msjsdiag.debugger-for-edge",
+		"esbenp.prettier-vscode",
+		"nrwl.angular-console",
+		"eg2.vscode-npm-script",
+		"lihui.vs-color-picker",
+		"mhutchie.git-graph",
+		"eamodio.gitlens"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
